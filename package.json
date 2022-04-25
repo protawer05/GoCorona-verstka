@@ -1,0 +1,24 @@
+{
+  "name": "gocorona",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon index.html 3000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/protawer05/GoCorona-verstka.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/protawer05/GoCorona-verstka/issues"
+  },
+  "homepage": "https://github.com/protawer05/GoCorona-verstka#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

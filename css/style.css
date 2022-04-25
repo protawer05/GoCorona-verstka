@@ -1,3 +1,7 @@
+html{
+    height: 100%;
+    width: 100%;
+}
 *,
 *::after,
 *::before {
@@ -20,7 +24,305 @@ img{
 body{
     height: 100%;
     line-height: 1;
+    font-family: 'Rubik';
+    font-size: 14px;
+    color: #616161;
 }
+
 .wrapper{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    min-height: 100%;
+}
+
+.main{
+    flex: 1 1 auto;
+}
+
+
+[class*="__container"]{
+    max-width: 1087px;
+    margin: 0 auto;
+    margin: 0px auto;
+    padding: 0 15px;
+}
+/***********************************HEADER**********************************************/
+/* PC */
+@media(max-width: 1087px){
+    [class*='__container']{
+        max-width: 970px;
+    }
+}
+/* TABLET */
+@media(max-width: 991.98px){
+    [class*='__container']{
+        max-width: 750px;
+    }
+}
+/* MOBILE */
+@media(max-width: 767.98px){
+    [class*='__container']{
+        max-width: none;
+    }
+}
+
+
+.header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    height: 114px;
+}
+.header__container {
+    display: flex;
+    min-height: 114px;
+    align-items: center;
+}
+.header__logo {
+    position: relative;
+    z-index: 5; 
+}
+.header__menu {
+    flex: 1 1 auto;
+}
+.menu {
+    display: flex;
+    justify-content: flex-end;
+}
+.menu__list {
+    display: flex;
+}
+.menu__item {
+    margin-right: 40px;
+}
+.menu__link {
+    font-family: 'Raleway';
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 1.2;
+    color: #000;
+    letter-spacing: 1px;
+}
+.menu__link:hover{
+    text-decoration: underline;
+}
+.header__button {
+    position: relative;
+    z-index: 5;
+    flex: 0 0 252px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.button {
+    display: inline-block;
+    font-family: 'Raleway';
+    font-weight: 800;
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: 1px;
+    color: #fcfdfe;
+    padding: 14px 30px;
+    border-radius: 5px;
+    background-color: #ec5863;
+    transition: background-color 0.3s ease 0s;
+}
+.button:hover{
+    background-color: rgb(230, 122, 129)
+}
+.button_blue {
+    background-color: #4285F4;
+}
+.button_blue:hover{
+    background-color: #6595e2;
+}
+@media(max-width: 991.98px){
+    .header__button{
+        flex: 0 0 170px;
+    }
+    .menu__item{
+        margin-right: 30px;
+    }
+    .header__container{
+        min-height: 80px;   
+    }
+}
+@media(max-width: 767.98px){
+    .menu__body{
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: #fff;
+        padding: 90px 15px 30px 15px;
+        transition: all 0.3s ease 0s;
+    }
+    .header:target .menu__body{
+        left: 0;
+    }
+    .header:target .menu__body:before{
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 80px;
+        width: 100%;
+        background-color: #fff;
+    }
+    .menu__link{
+        color: #000;
+        font-size: 20px;
+    }
+    .menu__item:not(:last-child){
+        margin-bottom: 25px;
+    }
+    .menu__list{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .header__button .button{
+        padding: 14px 20px;
+    }
+    .header:target .icon-menu{
+        display: none;
+    }
+    .header:target .close-icon-menu{
+        display: flex;
+    }
+}
+.close-icon-menu,
+.icon-menu{
+    display: none;
+}
+
+@media(max-width: 767.98px){
+    .icon-menu{
+        position: relative;
+        flex: 0 0 30px;
+        height: 18px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-left: 20px;
+    }
+    .icon-menu::after,
+    .icon-menu::before{
+        content: '';
+        background-color: #000;
+        height: 2px;
+    }
+    
+    .icon-menu span{
+        background-color: #000;
+        height: 2px;
+    }
+    .close-icon-menu{
+        flex: 0 0 30px;
+        height: 30px;
+        position: relative;
+        margin-left: 20px;
+    }
+    .close-icon-menu::before,
+    .close-icon-menu::after{
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        content: '';
+        background-color: #000;
+        height: 2px;
+    }
+    .close-icon-menu::before{
+        transform: rotate(45deg);
+    }
+    .close-icon-menu::after{
+        transform: rotate(-45deg);
+    }
     
 }
+@media(max-width: 497.98px){
+    .header__logo{
+        flex: 0 0 40px;
+        overflow: hidden;
+    }
+}
+/*                   block-text!!                              */
+.block-text {
+
+}
+.block-text__title {
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 126%;
+    color: #000;
+    margin-bottom: 12px;
+}
+.block-text__title span{
+    color: #EC5863;
+}
+.block-text__title_blue span{
+    color: #4285F4;
+}
+.block-text__text {
+    line-height: 138.5%;
+    margin-bottom: 24px;
+}
+.block-text__button {
+}
+/*                   get-started                              */
+.get-started {
+    background-color: #FAFBFD;
+    padding: 150px 0px 50px 0px;
+}
+.get-started__container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.get-started__content {
+    flex: 0 1 48%;
+}
+.get-started__block-text {
+    max-width: 410px;
+}
+.get-started__video {
+    flex: 1 1 100%;
+    padding: 60px 0px 0px 0px;
+}
+.video-get-started {
+    display: inline-flex;
+    align-items: center;
+}
+.video-get-started__icon {
+    flex: 0 0 44px;
+}
+.video-get-started__body {
+    padding-right: 12px;
+}
+.video-get-started__title {
+    font-size: 13px;
+    color: #b0b0b0;
+    line-height: 126%;
+    letter-spacing: 1.5px;
+    margin-bottom: 5px;
+}
+.video-get-started__text {
+    font-size: 9px;
+    color: #000;
+    line-height: 126%;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.get-started__image {
+    flex: 0 1 52%
+}
+.get-started__image img{
+    max-width: 100%;
+}
+/*                              ****                                      */
